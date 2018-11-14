@@ -93,7 +93,7 @@ def p_definition_modality(p):
     """definition : CARDINALITY entity MODALITY relation CARDINALITY entity"""
     p[0] = ('definition with Cardinality', p[1], p[2], p[3], p[4], p[5], p[6])
     # print(p[0])
-    d_instance._add_relationship(p[2], p[6], p[1], p[5], p[3])
+    d_instance._add_relationship(p[2], p[6], p[4], p[1], p[5],p[3])
 
 
 
