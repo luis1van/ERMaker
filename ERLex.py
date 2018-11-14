@@ -100,7 +100,7 @@ def p_definition_modality(p):
 def p_definition(p):
     """definition : CARDINALITY entity relation CARDINALITY entity"""
     p[0] = ('definition without cardinality', p[1], p[2], p[3], p[4], p[5])
-    d_instance._add_relationship(p[2], p[6], p[1], p[5], 'can')
+    d_instance._add_relationship(p[2], p[5], p[3], p[1], p[4], 'can')
 
 
 
