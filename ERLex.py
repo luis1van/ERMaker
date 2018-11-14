@@ -107,7 +107,12 @@ def p_definition(p):
 def p_assignment(p):
     """assignment : entity COMPOSITION attributelist"""
     p[0] = ('assignment', p[1], p[2], p[3])
-    d_instance._get_entity(p[1]).add_attribute(p[3])
+    entity = d_instance._get_entity(p[1])
+    if entity is not None:
+        entity.add_attribute(p[3])
+    else:
+        new_entity = d_instance._add_entity(p[1])
+        new_entity.add_attribute(p[3])
 
 
 def p_entity(p):
@@ -154,3 +159,5 @@ print(result)
 print('\n' + s)
 result = parser.parse(s)
 print(result)
+
+for e in d_instance

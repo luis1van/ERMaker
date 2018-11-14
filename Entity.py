@@ -12,6 +12,9 @@ class Entity:
     def get_relationships(self):
         return self.relationships.keys()
 
+    def __iter__(self):
+        return iter(self.relationships.keys())
+
     #We coulld add primary key and other type of attributes as keys in a dictionary instead of a list.
     def add_attribute(self,aName):
         if isinstance(aName, str) and aName not in self.attributes:
@@ -38,7 +41,6 @@ class Diagram:
             self.entity_dict = {}
             self.num_entities = 0
 
-
         def __iter__(self):
             return iter(self.entity_dict.values())
 
@@ -48,13 +50,11 @@ class Diagram:
             self.entity_dict[eName] = new_entity
             return new_entity
 
-
         def get_entity(self, eName):
             if eName in self.entity_dict:
                 return self.entity_dict[eName]
             else:
                 return None
-
 
         def add_relationship(self,fr , to, cardinality1,cardinality2, modality ):
             if fr not in self.entity_dict:
@@ -79,7 +79,7 @@ class Diagram:
         return getattr(self._instance, name)
 
     def _add_entity(self, eName):
-        self._instance.add_entity(eName)
+        return self._instance.add_entity(eName)
 
     def _get_entity(self, eName):
         return self._instance.get_entity(eName)
@@ -90,7 +90,7 @@ class Diagram:
     def _get_entities(self):
         return self._instance.get_entities()
 
-    def ___iter__(self):
+    def __iter__(self):
         return self._instance.__iter__()
 
 
@@ -98,7 +98,7 @@ class Diagram:
 
 
 
-
+#testing
 d1 = Diagram()
 print('good')
 d1._add_entity('School')
@@ -110,7 +110,12 @@ print(d1._get_entity('School').get_attributes())
 f = ['district']
 d1._get_entity('School').add_attribute('district')
 print(d1._get_entity('School').get_attributes())
+d1._add_entity('Student')
+d1._add_relationship('School','Student','one','many','may')
 
 
 
 
+for e in d1:
+    for r in e:
+        print (e.get_name(),r)
