@@ -116,7 +116,7 @@ d1._add_relationship('School','Student','has','one','many','may')
 
 
 for e in d1:
-    
+
     for r in e:
         print (e.get_name() , '\t\n' , e.get_attributes() , '\t\n' ,r[0] , '\t\n' , r[1]['cardinality'] , '\t\n' , r[1]['modality'], '\t\n', r[1]['entity'])
 
