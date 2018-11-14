@@ -1,6 +1,7 @@
 import ply.lex as lex
 import ply.yacc as yacc
 from ply.lex import TOKEN
+import Entity as ent
 
 import sys
 
@@ -77,6 +78,7 @@ lex.lex()
 
 
 # import token map from lexer
+d_instance = ent.Diagram()
 def p_expression(p):
     """expression : definition
        | assignment"""
@@ -91,16 +93,26 @@ def p_definition_modality(p):
     """definition : CARDINALITY entity MODALITY relation CARDINALITY entity"""
     p[0] = ('definition with Cardinality', p[1], p[2], p[3], p[4], p[5], p[6])
     # print(p[0])
+    d_instance._add_relationship(p[2], p[6], p[1], p[5], p[3])
+
 
 
 def p_definition(p):
     """definition : CARDINALITY entity relation CARDINALITY entity"""
     p[0] = ('definition without cardinality', p[1], p[2], p[3], p[4], p[5])
+    d_instance._add_relationship(p[2], p[6], p[1], p[5], 'can')
+
 
 
 def p_assignment(p):
     """assignment : entity COMPOSITION attributelist"""
     p[0] = ('assignment', p[1], p[2], p[3])
+    entity = d_instance._get_entity(p[1])
+    if entity is not None:
+        entity.add_attribute(p[3])
+    else:
+        new_entity = d_instance._add_entity(p[1])
+        new_entity.add_attribute(p[3])
 
 
 def p_entity(p):
@@ -147,3 +159,5 @@ print(result)
 print('\n' + s)
 result = parser.parse(s)
 print(result)
+
+for e in d_instance
