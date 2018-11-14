@@ -160,4 +160,4 @@ print('\n' + s)
 result = parser.parse(s)
 print(result)
 
-for e in d_instance
+
