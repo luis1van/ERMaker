@@ -17,15 +17,14 @@ class Entity:
 
     #We coulld add primary key and other type of attributes as keys in a dictionary instead of a list.
     def add_attribute(self,aName):
-        if isinstance(aName, str) and aName not in self.attributes:
-            self.attributes.append(aName)
-        else:
             for attribute in aName:
                 if attribute not in self.attributes:
                     self.attributes.extend(aName)
 
+
     def get_attributes(self):
         return self.attributes
+
 
     def get_name(self):
         return self.eName
@@ -99,25 +98,26 @@ class Diagram:
 
 
 #testing
-d1 = Diagram()
-print('good')
-d1._add_entity('School')
-i = ['name', 'city']
-d1._get_entity('School').add_attribute(i)
-print(d1._get_entity('School').get_attributes())
-d1._get_entity('School').add_attribute(i)
-print(d1._get_entity('School').get_attributes())
-f = ['district']
-d1._get_entity('School').add_attribute('district')
-print(d1._get_entity('School').get_attributes())
-d1._add_entity('Student')
+# d1 = Diagram()
+#print('good')
+#d1._add_entity('School')
+#i = ['name', 'city']
+#d1._get_entity('School').add_attribute(i)
+#print(d1._get_entity('School').get_attributes())
+#d1._get_entity('School').add_attribute(i)
+#print(d1._get_entity('School').get_attributes())
+#f = ['district']
+#d1._get_entity('School').add_attribute('district')
+#print(d1._get_entity('School').get_attributes())
+#d1._add_entity('Student')
 
-d1._add_relationship('School','Student','has','one','many','may')
+#d1._add_relationship('School','Student','has','one','many','may')
 
+#print('test abajo', d1.get_entity('firulais'))
 
-for e in d1:
+#for e in d1:
 
-    for r in e:
-        print (e.get_name() , '\t\n' , e.get_attributes() , '\t\n' ,r[0] , '\t\n' , r[1]['cardinality'] , '\t\n' , r[1]['modality'], '\t\n', r[1]['entity'])
+ #   for r in e:
+#        print (e.get_name() , '\t\n' , e.get_attributes() , '\t\n' ,r[0] , '\t\n' , r[1]['cardinality'] , '\t\n' , r[1]['modality'], '\t\n', r[1]['entity'])
 
 

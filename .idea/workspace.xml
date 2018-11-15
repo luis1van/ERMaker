@@ -31,7 +31,7 @@
     <session id="-2102708124">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="2" />
@@ -71,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ERLex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="87" column="14" lean-forward="true" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+            <state relative-caret-position="397">
+              <caret line="100" column="69" lean-forward="true" selection-start-line="100" selection-start-column="69" selection-end-line="100" selection-end-column="69" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <marker date="1542176620676" expanded="true" signature="2046:2051" ph="..." />
@@ -288,7 +288,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="129" y="13" width="3712" height="1899" extended-state="6" />
+    <frame x="130" y="-8" width="3710" height="1919" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.07620099" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -391,8 +391,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ERLex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="87" column="14" lean-forward="true" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+        <state relative-caret-position="397">
+          <caret line="100" column="69" lean-forward="true" selection-start-line="100" selection-start-column="69" selection-end-line="100" selection-end-column="69" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <marker date="1542176620676" expanded="true" signature="2046:2051" ph="..." />

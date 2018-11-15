@@ -146,13 +146,13 @@ parser = yacc.yacc()
 # while True:
 #     try:
 s = 'elephants composed of apples, pears, butterfly, dung, magic'
-s1 = 'many elephant can have many children'
+s1 = 'many elephants can have many children'
 # except EOFError:
 #     print("EOF")
 #     break
 # if not s:
 #     print(s)
-#     break
+#     break  pears, butterfly, dung, magic
 print(s1)
 result = parser.parse(s1)
 print(result)
@@ -160,4 +160,9 @@ print('\n' + s)
 result = parser.parse(s)
 print(result)
 
-for e in d_instance
+
+for e in d_instance:
+
+    for r in e:
+        print (e.get_name() , '\t\n' , e.get_attributes() , '\t\n' ,r[0] , '\t\n' , r[1]['cardinality'] , '\t\n' , r[1]['modality'], '\t\n', r[1]['entity'])
+
