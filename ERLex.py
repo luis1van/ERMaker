@@ -2,7 +2,8 @@ import ply.lex as lex
 import ply.yacc as yacc
 from ply.lex import TOKEN
 import Entity as ent
-
+import ERDrawer as drawer
+from graphviz import Source
 import sys
 
 if sys.version_info[0] >= 3:
@@ -146,7 +147,8 @@ parser = yacc.yacc()
 # while True:
 #     try:
 s = 'elephants composed of apples, pears, butterfly, dung, magic'
-s1 = 'many elephants can have many children'
+s2 = 'children composed of diapers, tears, hellfire, hopes, dreams'
+s1 = 'one elephants can have one children'
 # except EOFError:
 #     print("EOF")
 #     break
@@ -159,10 +161,27 @@ print(result)
 print('\n' + s)
 result = parser.parse(s)
 print(result)
+result = parser.parse(s2)
+print(result)
 
-
+erScript = drawer.heading
+relations = []
 for e in d_instance:
+    erScript += e.get_name() + drawer.entityLabel + e.get_name() + drawer.endRow
+    for a in e.get_attributes():
+        erScript += drawer.startAttribute + a + drawer.endRow
+    erScript += drawer.entityEnd
 
     for r in e:
-        print (e.get_name() , '\t\n' , e.get_attributes() , '\t\n' ,r[0] , '\t\n' , r[1]['cardinality'] , '\t\n' , r[1]['modality'], '\t\n', r[1]['entity'])
+        if r[0] not in relations:
+            print('in relations')
+            print(r[0])
+            relations.append(r[0])
+            erScript += r[0] + drawer.relationBox
+        erScript += e.get_name() + ' -> ' + r[0] + drawer.arrowtailB+drawer.getCardinality(r[1]['cardinality'])+ drawer.getModality(r[1]['modality']) + drawer.arrowtailE
+        print(e.get_name(), '\t\n', e.get_attributes(), '\t\n', r[0], '\t\n', r[1]['cardinality'], '\t\n', r[1]['modality'], '\t\n', r[1]['entity'])
 
+erScript += drawer.end
+print(erScript)
+src = Source(erScript)
+src.render('test-output/holy-grenade.gv', view=True)
