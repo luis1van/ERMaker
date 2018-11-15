@@ -149,6 +149,9 @@ parser = yacc.yacc()
 s = 'elephants composed of apples, pears, butterfly, dung, magic'
 s2 = 'children composed of diapers, tears, hellfire, hopes, dreams'
 s1 = 'one elephants can have one children'
+s3 = 'many manatees can alsohave many children'
+s4 = 'a sheep must regret one children'
+s5 = 'sheep composed of darkmatter, solace, evil, satan'
 # except EOFError:
 #     print("EOF")
 #     break
@@ -162,6 +165,12 @@ print('\n' + s)
 result = parser.parse(s)
 print(result)
 result = parser.parse(s2)
+print(result)
+result = parser.parse(s3)
+print(result)
+result = parser.parse(s4)
+print(result)
+result = parser.parse(s5)
 print(result)
 
 erScript = drawer.heading
