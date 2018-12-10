@@ -146,18 +146,18 @@ parser = yacc.yacc()
 
 # while True:
 #     try:
-s = 'elephants composed of apples, pears, butterfly, dung, magic'
-s2 = 'children composed of diapers, tears, hellfire, hopes, dreams'
-s1 = 'one elephants can have one children'
-s3 = 'many manatees can alsohave many children'
-s4 = 'a sheep must regret one children'
-s5 = 'sheep composed of darkmatter, solace, evil, satan'
-# except EOFError:
-#     print("EOF")
-#     break
-# if not s:
-#     print(s)
-#     break  pears, butterfly, dung, magic
+# s = 'elephants composed of apples, pears, butterfly, dung, magic'
+# s2 = 'children composed of diapers, tears, hellfire, hopes, dreams'
+# s1 = 'one elephants can have one children'
+# s3 = 'many manatees can alsohave many children'
+# s4 = 'a sheep must regret one children'
+# s5 = 'sheep composed of darkmatter, solace, evil, satan'
+# # except EOFError:
+# #     print("EOF")
+# #     break
+# # if not s:
+# #     print(s)
+# #     break  pears, butterfly, dung, magic
 print(s1)
 result = parser.parse(s1)
 print(result)
@@ -171,26 +171,32 @@ print(result)
 result = parser.parse(s4)
 print(result)
 result = parser.parse(s5)
-print(result)
+ print(result)
+i = input("\n\t>>")
+while i != "done":
+    if i != "print":
+        result = parser.parse(i)
+        print(result)
+    else:
+        erScript = drawer.heading
+        relations = []
+        for e in d_instance:
+            erScript += e.get_name() + drawer.entityLabel + e.get_name() + drawer.endRow
+            for a in e.get_attributes():
+                erScript += drawer.startAttribute + a + drawer.endRow
+            erScript += drawer.entityEnd
 
-erScript = drawer.heading
-relations = []
-for e in d_instance:
-    erScript += e.get_name() + drawer.entityLabel + e.get_name() + drawer.endRow
-    for a in e.get_attributes():
-        erScript += drawer.startAttribute + a + drawer.endRow
-    erScript += drawer.entityEnd
+            for r in e:
+                if r[0] not in relations:
+                    #print('in relations')
+                    #print(r[0])
+                    relations.append(r[0])
+                    erScript += r[0] + drawer.relationBox
+                erScript += e.get_name() + ' -> ' + r[0] + drawer.arrowtailB+drawer.getCardinality(r[1]['cardinality'])+ drawer.getModality(r[1]['modality']) + drawer.arrowtailE
+                #print(e.get_name(), '\t\n', e.get_attributes(), '\t\n', r[0], '\t\n', r[1]['cardinality'], '\t\n', r[1]['modality'], '\t\n', r[1]['entity'])
 
-    for r in e:
-        if r[0] not in relations:
-            print('in relations')
-            print(r[0])
-            relations.append(r[0])
-            erScript += r[0] + drawer.relationBox
-        erScript += e.get_name() + ' -> ' + r[0] + drawer.arrowtailB+drawer.getCardinality(r[1]['cardinality'])+ drawer.getModality(r[1]['modality']) + drawer.arrowtailE
-        print(e.get_name(), '\t\n', e.get_attributes(), '\t\n', r[0], '\t\n', r[1]['cardinality'], '\t\n', r[1]['modality'], '\t\n', r[1]['entity'])
-
-erScript += drawer.end
-print(erScript)
-src = Source(erScript)
-src.render('test-output/holy-grenade.gv', view=True)
+        erScript += drawer.end
+        #print(erScript)
+        src = Source(erScript)
+        src.render('test-output/holy-grenade.gv', view=True)
+    i = input("\n\t>>")

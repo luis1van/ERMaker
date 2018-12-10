@@ -5,14 +5,14 @@ heading = """digraph G {
     // Defaults
     //  
     // Box for entities
-    node [shape=record, margin=0]
+    
     // One-to-many relation (from one, to many)
     //  
     // Entities
     //  
     """
 
-entityLabel = """[label=<
+entityLabel = """[ shape=record, margin=0, label=<
         <table border="0" cellborder="1" cellspacing="0" cellpadding="4">
             <tr><td bgcolor="lightblue">"""
 
@@ -23,76 +23,70 @@ entityEnd = """"</table>
     >]"""
 end = "}"
 src = Source("""digraph G { 
-    //  
-    // Defaults
-    //  
-    // Box for entities
-    node [shape=record, margin=0]
-    // One-to-many relation (from one, to many)
-    //  
+ 
     // Entities
     //  
-    Article [label=<
+    splines = ortho;
+    University [shape=record,margin=0,label=<
         <table border="0" cellborder="1" cellspacing="0" cellpadding="4">
-            <tr><td bgcolor="lightblue">Article</td></tr>
-            <tr><td align="left">id: int(11)</td></tr>
-            <tr><td align="left">author: int(11)</td></tr>
-            <tr><td align="left">title: varchar(255)</td></tr>
-            <tr><td align="left">content: longtext</td></tr>
-            <tr><td align="left">created: datetime</td></tr>
-            <tr><td align="left">modified: datetime</td></tr>
+            <tr><td bgcolor="lightblue">University</td></tr>
+            <tr><td align="left">Name</td></tr>
+            <tr><td align="left">Address</td></tr>
         </table>
-    >]
-    Comment [label=<
+    >];
+    Student [shape=record,margin=0,label=<
         <table border="0" cellborder="1" cellspacing="0" cellpadding="4">
-            <tr><td bgcolor="lightblue">Comment</td></tr>
-            <tr><td align="left">id: int(11)</td></tr>
-            <tr><td align="left">author: int(11)</td></tr>
-            <tr><td align="left">content: longtext</td></tr>
-            <tr><td align="left">created: datetime</td></tr>
-            <tr><td align="left">modified: datetime</td></tr>
+            <tr><td bgcolor="lightblue">Student</td></tr>
+            <tr><td align="left">S_ID</td></tr>
+            <tr><td align="left">Name</td></tr>
+            <tr><td align="left">Phone</td></tr>
         </table>
-    >]  
-Dog [label=<
+    >] ; 
+Course [shape=record,margin=0,label=<
         <table border="0" cellborder="1" cellspacing="0" cellpadding="4">
-            <tr><td bgcolor="lightblue">Dog</td></tr>
-            <tr><td align="left">id: int(11)</td></tr>
-            <tr><td align="left">author: int(11)</td></tr>
-            <tr><td align="left">title: varchar(255)</td></tr>
-            <tr><td align="left">content: longtext</td></tr>
-            <tr><td align="left">created: datetime</td></tr>
-            <tr><td align="left">modified: datetime</td></tr>
+            <tr><td bgcolor="lightblue">Course</td></tr>
+            <tr><td align="left">Name</td></tr>
+            <tr><td align="left">Subject</td></tr>
+            <tr><td align="left">Section</td></tr>
         </table>
-    >]
-Food [label=<
+    >];
+Professor [shape=record,margin=0,label=<
         <table border="0" cellborder="1" cellspacing="0" cellpadding="4">
-            <tr><td bgcolor="lightblue">Food</td></tr>
-            <tr><td align="left">id: int(11)</td></tr>
-            <tr><td align="left">author: int(11)</td></tr>
-            <tr><td align="left">content: longtext</td></tr>
-            <tr><td align="left">created: datetime</td></tr>
-            <tr><td align="left">modified: datetime</td></tr>
+            <tr><td bgcolor="lightblue">Professor</td></tr>
+            <tr><td align="left">P_ID</td></tr>
+            <tr><td align="left">Name</td></tr>
         </table>
-    >]  
+    >] ;
+    
+
     //  
+
     // Relationships
     //  
-    //eats [shape=box]
-    about [shape = box]
-    has [shape=box]
-    gets [shape = box]
-    // Food -> eats [arrowhead=none, arrowtail=crow,dir=both];
-    //Dog -> eats [arrowhead=none, arrowtail=tee,dir=both];
+        University -> has [arrowhead=none, arrowtail=tee,dir=both];
+        employs -> University [arrowhead=tee, arrowtail=none,dir=both];
+        Student -> takes [arrowhead=none, arrowtail=crowtee,dir=both];
+        has -> Student [arrowhead=crowtee, arrowtail=none,dir=both];
+    
+        takes  -> Course [arrowhead=crowtee, arrowtail=none,dir=both];
+        Course -> teaches [arrowhead=none, arrowtail=crowodot,dir=both];
+     
+        Professor -> employs [arrowhead=none, arrowtail=crowtee,dir=both];
+        teaches -> Professor [arrowhead=crowtee, arrowtail=none,dir=both];
 
-    Food -> about [arrowhead=none, arrowtail=odot,dir=both];
-    Article -> about [arrowhead=none, arrowtail=tee,dir=both];
+        offers -> Course [arrowhead=crowtee, arrowtail=none,dir=both];
+        University -> offers [arrowhead=none, arrowtail=tee,dir=both];
 
-    Article->has [arrowhead=none, arrowtail=crowodot,dir=both];
-    Comment->has [arrowhead=none, arrowtail=crowtee,dir=both];
-
-    Dog -> gets [arrowhead=none, arrowtail=crow,dir=both]
-    Comment -> gets [arrowhead=none, arrowtail=none,dir=both]
-}""")
+    overlap = false;
+    takes [shape=box];
+    offers [shape = box];
+    has [shape=box];
+    employs [shape = box];
+    teaches [shape = box];
+   rankdir=LR;
+   
+   
+}\n""")
 
 arrowtailB = ' [arrowhead=none, arrowtail='
 arrowtailE = ' ,dir=both]'
@@ -114,3 +108,4 @@ def getModality(card):
         return 'odot'
     else:
         return 'none'
+src.render('test-output/holy-grenade13.gv', view=True)
