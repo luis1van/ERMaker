@@ -12,7 +12,8 @@ ERmaker will allow the user to draw, through a console, the following major comp
 4. Mapping cardinality:The user will be able to specify if the cardinality is one-to-one, one-to-many, many-to-one or many-to-many.
 5. Modality: State whether an entity’s participation in a relationship is mandatory or optional.
 
-
+## Video
+https://drive.google.com/a/upr.edu/file/d/1NfOmJEIu9PFFBdDMsXo0N5gToadCiTGb/view?usp=sharing
 
 ```markdown
 Syntax highlighted code block
@@ -21,15 +22,8 @@ Syntax highlighted code block
 ## Header 2
 ### Header 3
 
-- Bulleted
-- List
+>><Cardinal
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
