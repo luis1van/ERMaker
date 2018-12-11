@@ -30,6 +30,23 @@ Example Code
 
 ```
 <img src="https://lh5.googleusercontent.com/iomq-4IDmWhDuy-nu2uBgDCxCxHak9yW0JFcCbDmv2Ul3PGQWpLPvQxl2NoTSM6eK3gDvfILeVDo3tI-aWQ5=w958-h830-rw" alt="hi" class="inline"/>
-### Support or Contact
+## Approach
+
+### Modules and Interfaces
+
+The libraries that comprise the application are PLY and Graphviz . PLY contains the Yacc and the Lex modules that are used as the base for the implementation of the parser and lexer. Then, the Graphviz library was used to render the graphs by using raw dot language to describe them. 
+
+Our custom modules include ERLex, ERModel and ERGraph. The ERLex module contains the main code of the application, which implements the different elements of the language in the lexer using Lex and the grammatical elements using Yacc.  The ERModel module contains the definition and implementation of the graph object used to store the model for the ER. It consists of methods to instantiate a graph and  add, edit, and traverse through the nodes and edges, where nodes represent entities and edges represent relations.The ERGraph module contains the elements needed for the construction of the raw dot structure, required to draw the graph in graphviz.
+
+
+### Development Environment
+
+Python 3 - the language used for development.
+PyCharm - the main IDE used for development.
+Github - used as our Version Control to track changes and as a collaborative tool.
+
+
+
+## Team
 
 ER Maker team is comprised of Luis Padro and Lumaris Rios. This project was developed as part of the Programming Language course (ICOM4036) directed by Dr. Wilson Rivera.
