@@ -1,12 +1,10 @@
-## Programming Language for Beatifull Clean ER Diagrams
-
-### Motivation
+## Motivation
 Entity Relationship diagrams(ER-diagrams) are typically used in computing to organize data within databases and information systems. These graphical representations of entities and their relationships to each other are particularly useful during the conceptual-design and review phases of databases. 
 
 Often drag and drop software as to other programming languages are tedious to use, resulting in complex learning processes and time consumption. ERMaker is a high-level programing language developed as an alternative for drawing ER-diagrams. 
 
 
-### Language Features
+## Language Features
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
