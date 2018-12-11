@@ -13,8 +13,8 @@ ERmaker will allow the user to draw, through a console, the following major comp
 5. Modality: State whether an entity’s participation in a relationship is mandatory or optional.
 
 ## Video
-https://drive.google.com/a/upr.edu/file/d/1NfOmJEIu9PFFBdDMsXo0N5gToadCiTGb/view?usp=sharing
-
+<video src="
+https://drive.google.com/a/upr.edu/file/d/1NfOmJEIu9PFFBdDMsXo0N5gToadCiTGb/view?usp=sharing" width="320" height="200" controls preload></video>
 ```markdown
 Syntax highlighted code block
 
