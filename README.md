@@ -41,9 +41,11 @@ Our custom modules include ERLex, ERModel and ERGraph. The ERLex module contains
 
 ### Development Environment
 
-Python 3 - the language used for development.
-PyCharm - the main IDE used for development.
-Github - used as our Version Control to track changes and as a collaborative tool.
+Python 3: the language used for development.
+PLY: Lexer and parser used.
+Grphviz: rendering engine for ER graphs.
+PyCharm: the main IDE used for development.
+Github: used as our Version Control to track changes and as a collaborative tool.
 
 
 
