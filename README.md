@@ -7,6 +7,16 @@ Often drag and drop software as to other programming languages are tedious to us
 ## Language Features
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Language Features
+
+1. ERmaker will allow the user to draw, through a console, the following major components of an ER-diagram:
+2. Rectangles divided into two parts: These will represent entity sets. The top part will represent the name of the entity set. The      bottom part will contain the names of the attributes corresponding to that particular entity set.
+3.Small Rectangles: These will represent relationship sets.
+4.Lines: link relationship sets to entity sets.
+5.Mapping cardinality:The user will be able to specify if the cardinality is one-to-one, one-to-many, many-to-one or many-to-many.
+6.Modality: State whether an entity’s participation in a relationship is mandatory or optional.
+
+
 
 ```markdown
 Syntax highlighted code block
