@@ -16,22 +16,16 @@ ERmaker will allow the user to draw, through a console, the following major comp
 <video src="
 https://r3---sn-hp57kn7z.c.drive.google.com/videoplayback?id=7c3ee3c6fa822a51&itag=22&source=webdrive&requiressl=yes&mm=30&mn=sn-hp57kn7z&ms=nxu&mv=u&pl=24&sc=yes&ttl=transient&ei=FCoQXImcFpLWqwXGuKnABA&susc=dr&driveid=1NfOmJEIu9PFFBdDMsXo0N5gToadCiTGb&app=texmex&mime=video/mp4&dur=62.833&lmt=1544562249071471&mt=1544562970&ip=136.145.214.12&ipbits=0&expire=1544577620&cp=QVNJVkZfVlZQQVhOOkpXam1oU2F3TVhR&sparams=ip,ipbits,expire,id,itag,source,requiressl,mm,mn,ms,mv,pl,sc,ttl,ei,susc,driveid,app,mime,dur,lmt,cp&signature=27C6B22B2E862B5C3661D402A86D123D037C5A47241DDB0699455A43CDFD93FB.CF8E28E7170C75ED46D1C7E0D2869BED966DA0CEB190E8D94DEF00BC0B5917FF&key=us0&cpn=8CLowfImqAIsaq2u&c=WEB_EMBEDDED_PLAYER&cver=20181208" width="600" height="380" controls preload></video>
 ```markdown
-Syntax highlighted code block
+Example Code
 
-# Header 1
-## Header 2
-### Header 3
-
->><Cardinal
+>> many Proffessor can teach many course
+>> many Student take many Course
+>> a university has many Student
+>> a University Offers many Course
+>> a University employs many Professors
 
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/luis1van/ERMaker/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
+<img src="https://lh5.googleusercontent.com/iomq-4IDmWhDuy-nu2uBgDCxCxHak9yW0JFcCbDmv2Ul3PGQWpLPvQxl2NoTSM6eK3gDvfILeVDo3tI-aWQ5=w958-h830-rw" alt="hi" class="inline"/>
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+ER Maker team is comprised of Luis Padro and Lumaris Rios. This project was developed as part of the Programming Language course (ICOM4036) directed by Dr. Wilson Rivera.
