@@ -1,4 +1,4 @@
-[Final Report](https://docs.google.com/document/d/1ibL46I4llShFs_w-7vZYXgDiehfogCvZ3GzFjLpRHDs/edit?usp=sharing)
+[Final Report](https://github.com/luis1van/ERMaker/docs/ERMaker_FINAL.pdf)
 ## Motivation
 Entity Relationship diagrams(ER-diagrams) are typically used in computing to organize data within databases and information systems. These graphical representations of entities and their relationships to each other are particularly useful during the conceptual-design and review phases of databases. 
 
