@@ -18,11 +18,15 @@ https://r3---sn-hp57kn7z.c.drive.google.com/videoplayback?id=7c3ee3c6fa822a51&it
 ```markdown
 Example Code
 
->> many Proffessor can teach many course
+>> many Professor can teach many course
 >> many Student take many Course
 >> a university has many Student
 >> a University Offers many Course
->> a University employs many Professors
+>> a University employs many Professor
+>> Student composed of ID, Name, Phone
+>> University composed of Name, Address
+>> Professor composed of ID, Name
+>> Course composed of Name, Subject, Section
 
 ```
 <img src="https://lh5.googleusercontent.com/iomq-4IDmWhDuy-nu2uBgDCxCxHak9yW0JFcCbDmv2Ul3PGQWpLPvQxl2NoTSM6eK3gDvfILeVDo3tI-aWQ5=w958-h830-rw" alt="hi" class="inline"/>
